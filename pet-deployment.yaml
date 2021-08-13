@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pet
+spec:
+  selector:
+    matchLabels:
+      run: pet
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: pet
+    spec:
+      containers:
+      - name: pet
+        image: quay.io/keycloak/keycloak
+        ports:
+        - containerPort: 80
+
