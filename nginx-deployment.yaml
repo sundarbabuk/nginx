@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-nginx
-  namespace: sundar
 spec:
   selector:
     matchLabels:
@@ -15,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-nginx
-        image: nginx
+        image: hello-world
         ports:
         - containerPort: 80
 
