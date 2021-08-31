@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`nginx.example.com`)
+    - match: Host(`nginx.demo.com`)
       kind: Rule
       services:
         - name: nginx
