@@ -32,10 +32,15 @@ spec:
               path: /
               port: http
   strategy:
-#     blueGreen:
-#       activeService: rollouts-demo
-#       previewService: rollouts-demo-preview
      canary: 
        steps:
        - setWeight: 20
        - pause: {}
+       # The following pause step will pause the rollout indefinitely until manually resumed.
+       # Rollouts can be manually resumed by running `kubectl argo rollouts promote ROLLOUT`
+       - setWeight: 40
+       - pause: {duration: 40s}
+       - setWeight: 60
+       - pause: {duration: 20s}
+       - setWeight: 80
+       - pause: {duration: 20s
