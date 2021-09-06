@@ -35,4 +35,5 @@ spec:
      blueGreen:
        activeService: nginx-demo
        previewService: nginx-demo-preview
+       autoPromotionEnabled: false
    
