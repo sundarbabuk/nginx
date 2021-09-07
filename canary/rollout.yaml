@@ -2,22 +2,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: nginx-demo
+  name: nginx-canary
   labels:
-    app: nginx-demo
+    app: nginx-canary
 spec:
   replicas: 5
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: nginx-demo
+      app: nginx-canary
   template:
     metadata:
       labels:
-        app: nginx-demo
+        app: nginx-canary
     spec:
       containers:
-        - name: nginx-demo
+        - name: nginx-canary
           image: nginx:1.14.0
           ports:
             - name: http

@@ -1,14 +1,14 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: nginx-demo
+  name: nginx-canary
   namespace: canary
 spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`nginx.demo.com`)
+    - match: Host(`nginx-canary.demo.com`)
       kind: Rule
       services:
-        - name: nginx
+        - name: nginx-canary
           port: 80
