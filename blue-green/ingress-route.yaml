@@ -1,14 +1,32 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: nginx-demo
+  name: nginx-blue-green
   namespace: blue-green
 spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`nginx.demo.com`)
+    - match: Host(`nginx-blue-green.demo.com`)
       kind: Rule
       services:
-        - name: nginx
+        - name: nginx-blue-green
           port: 80
+
+---
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nginx-blue-green-preview
+  namespace: blue-green
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`nginx-blue-green-preview.demo.com`)
+      kind: Rule
+      services:
+        - name: nginx-blue-green-preview
+          port: 80
+---

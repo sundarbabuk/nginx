@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-demo-preview
+  name: nginx-blue-green-preview
   labels:
-    app: nginx-demo
+    app: nginx-blue-green-preview
 spec:
   ports:
     - port: 80
@@ -12,5 +12,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: nginx-demo
+    app: nginx-blue-green-preview
   type: ClusterIP

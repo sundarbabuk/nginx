@@ -2,22 +2,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: nginx-demo
+  name: nginx-blue-green
   labels:
-    app: nginx-demo
+    app: nginx-blue-green
 spec:
   replicas: 5
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: nginx-demo
+      app: nginx-blue-green
   template:
     metadata:
       labels:
-        app: nginx-demo
+        app: nginx-blue-green
     spec:
       containers:
-        - name: nginx-demo
+        - name: nginx-blue-green
           image: nginx:1.14.0
           ports:
             - name: http
@@ -33,7 +33,7 @@ spec:
               port: http
   strategy:
      blueGreen:
-       activeService: nginx-demo
-       previewService: nginx-demo-preview
+       activeService: nginx-blue-green
+       previewService: nginx-blue-green-preview
        autoPromotionEnabled: false
    
