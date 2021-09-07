@@ -1,14 +1,14 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: nginx
+  name: nginx-production
   namespace: production
 spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`nginx.devsecops.com`)
+    - match: Host(`nginx-production.devsecops.com`)
       kind: Rule
       services:
-        - name: nginx
+        - name: nginx-production
           port: 80
