@@ -1,14 +1,14 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: nginx
+  name: nginx-staging
   namespace: staging
 spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`nginx.demo.com`)
+    - match: Host(`nginx-staging.demo.com`)
       kind: Rule
       services:
-        - name: nginx
+        - name: nginx-staging
           port: 80
