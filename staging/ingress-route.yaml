@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`nginx-staging.demo.com`)
+    - match: Host(`nginx-staging.devsecops.com`)
       kind: Rule
       services:
         - name: nginx-staging
