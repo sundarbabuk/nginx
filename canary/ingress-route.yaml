@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`nginx-canary.demo.com`)
+    - match: Host(`nginx-canary.devsecops.com`)
       kind: Rule
       services:
         - name: nginx-canary
