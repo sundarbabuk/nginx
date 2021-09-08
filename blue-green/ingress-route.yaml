@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`nginx-blue-green.demo.com`)
+    - match: Host(`nginx-blue-green.devsecops.com`)
       kind: Rule
       services:
         - name: nginx-blue-green
@@ -24,7 +24,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`nginx-blue-green-preview.demo.com`)
+    - match: Host(`nginx-blue-green-preview.devsecops.com`)
       kind: Rule
       services:
         - name: nginx-blue-green-preview
