@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx-production
-        image: sundarbabu/green:0.1
+        image: sundarbabu/petdemo:v3.0.0
         ports:
         - containerPort: 80
         resources:
